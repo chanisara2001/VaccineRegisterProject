@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], input[type=tel], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }  
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+	<title>User Registration</title>
+	
+</head>
+<body>
+	<div align="center" class = "position-absolute top-50 start-50 translate-middle row align-items-center p-4 p-md-5 border rounded-3 bg-light text-dark">
+	<h1>User Registration</h1>
+	<form th:action="@{/userRegister}" method="post", th:object="${user}">
+	<br>
+		<div>
+		<label>เลขบัตรประชาชน</label> 
+			<input type="text" th:field="*{pid}" placeholder="ไม่ต้องใส่ - หรือเว้นวรรค" class="form-control" /><br> 
+		</div>
+
+		<div>
+		<label>คำนำหน้า</label> 
+			<select th:field="*{prefix}"
+				class="form-select"  style="width: 200px; display: inline-block;">
+				<option value="นาย" selected>นาย</option>
+				<option value="นาง">นาง</option>
+				<option value="นางสาว">นางสาว</option>
+				<option value="เด็กชาย">เด็กชาย</option>
+				<option value="เด็กหญิง">เด็กหญิง</option>
+			</select><br>
+		</div>
+
+		<div>
+        <label>ชื่อ</label>
+        	<input  type="text" th:field="*{fname}" class="form-control"/><br>
+		</div>
+
+		<div>
+        <label>นามสกุล</label>
+        	<input type="text" th:field="*{lname}" class="form-control"/><br>
+		</div>
+		
+		<div>
+		<label>วันเกิด(วว/ดด/ปปปป):</label> 
+			<input type="date" th:field="*{birth_date}" placeholder="Select date" 
+			class="form-control" style="width: 200px; display: inline-block;" /><br>
+		</div>
+
+		<div>
+		<label>เบอร์โทรศัพท์</label> 
+			<input type="tel" th:field="*{tel}" placeholder="0812345678" 
+			class="form-control" /><br>
+		</div>
+
+		<div>
+		<label>รหัสผ่าน</label>
+			<input type="password" th:field="*{password}" class="form-control"/>	
+		</div>
+		<div>
+						
+		<button type="submit" class="btn btn-success">ลงทะเบียน</button>
+	</form>
+	
+	</div>
+</body>
+</html>

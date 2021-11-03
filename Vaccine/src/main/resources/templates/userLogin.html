@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" >
+	<style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], input[type=tel], select {
+            display: inline-block;
+            width: 200px;
+        }
+        
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        
+        
+    </style>
+    
+	<title>Login</title>
+</head>
+
+    <body>
+    	
+		<div align="center" class = "position-absolute top-50 start-50 translate-middle row align-items-center p-4 p-md-5 border rounded-3 bg-light text-dark">
+	     <h1>เข้าสู่ระบบ</h1>
+	        <form th:action="@{/performUserLogin}" method="post" th:object="${user}" >
+	        	<br>
+	        	<div>
+	            <label> เลขบัตรประชาชน</label>
+	            	<input type="text" name="pid" required class="form-control"/> 
+	           </div>
+				
+				<div>
+	            <label>รหัสผ่าน</label>
+	            	<input type="password" name="password" required class="form-control"/>
+	            </div>
+	            
+	            <br>
+	            <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success"/>
+	        </form>
+        </div>
+        
+         <div th:if="${param.error}">
+            Invalid pid  password. 
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div> 
+            
+    </body>
+</html>

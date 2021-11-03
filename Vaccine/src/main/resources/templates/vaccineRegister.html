@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], input[type=tel], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }  
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        
+        
+    </style>
+	<title>โรงพยาบาลราชพฤกษ์</title>
+</head>
+<body>
+	<div align="center" class = "position-absolute top-50 start-50 translate-middle row align-items-center p-4 p-md-5 border rounded-3 bg-light text-dark">
+	<h1>Vaccine Registration</h1>
+	<br>
+	<form th:action="@{/vaccineRegister}" method="post", th:object="${register}">
+			
+		<label>จังหวัด</label> 
+			<select th:field="*{province.province_id}">
+    			<option th:each="p : ${provinces}" th:value="${p.province_id}" th:text="${p.name_in_thai}" ></option>
+			</select><br>
+			
+		<label>วัคซีนที่ต้องการ</label> 
+			<select th:field="*{vaccine.vaccine_id}">
+    			<option th:each="v : ${vaccines}" th:value="${v.vaccine_id}" th:text="${v.name}" ></option>
+			</select><br>
+			
+		<label>จำนวนโดส</label>
+			 <select class="form-select" th:field="*{dose}" style="width: 200px; display: inline-block; ">
+  				<option value="1">1 โดส</option>
+  				<option value="2">2 โดส</option>
+			</select><br>
+		
+		<br>				
+		<input type="submit" value="ยืนยันข้อมูล" class="btn btn-success"/>
+	</form>
+	</div>
+</body>
+</html>

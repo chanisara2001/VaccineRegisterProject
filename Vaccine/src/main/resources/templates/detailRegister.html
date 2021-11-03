@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+	<title>โรงพยาบาลราชพฤกษ์</title>
+</head>
+<body>
+	<div>
+	
+		<h1 align="center" >สำหรับท่านที่ได้ทำการจองวัคซีนทางเลือกไว้กับโรงพยาบาลราชพฤกษ์</h1>
+		<div >
+			<h6>&rArr; รายละเอียดและเงื่อนไขในการจองวัคซีน</h6>
+			<a href="/detailCondition"><button type="button" class="btn btn-success">อ่านรายละเอียด</button></a><br>
+			<br>
+			<h6>&rArr; สำหรับท่านที่ต้องการจองวัคซีนทางเลือกไว้กับโรงพยาบาลราชพฤกษ์ จำเป็นต้องลงทะเบียนผู้ใช้งานก่อน</h6>
+			<a href="/userRegister"><button type="button" class="btn btn-success">ลงทะเบียนผู้ใช้งาน</button></a><br>
+			<br>
+			<h6>&rArr; สำหรับท่านที่สมัครบัญชีผู้ใช้งานแล้วสามารถจองวัคซีนได้เลย</h6>	 			
+			<a href="/vaccineRegister"><button type="button" class="btn btn-success">จองวัคซีน</button></a><br>	
+			<br>
+		</div>	
+						
+	</div>
+</body>
+</html>
