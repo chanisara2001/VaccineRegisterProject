@@ -36,12 +36,12 @@
 	<br>
 		<div>
 		<label>เลขบัตรประชาชน</label> 
-			<input type="text" th:field="*{pid}" placeholder="ไม่ต้องใส่ - หรือเว้นวรรค" class="form-control" /><br> 
+			<input type="text" th:field="*{pid}" placeholder="ไม่ต้องใส่ - หรือเว้นวรรค" class="form-control" required/><br> 
 		</div>
 
 		<div>
 		<label>คำนำหน้า</label> 
-			<select th:field="*{prefix}"
+			<select th:field="*{prefix}" required
 				class="form-select"  style="width: 200px; display: inline-block;">
 				<option value="นาย" selected>นาย</option>
 				<option value="นาง">นาง</option>
@@ -53,29 +53,29 @@
 
 		<div>
         <label>ชื่อ</label>
-        	<input  type="text" th:field="*{fname}" class="form-control"/><br>
+        	<input  type="text" th:field="*{fname}" class="form-control" required/><br>
 		</div>
 
 		<div>
         <label>นามสกุล</label>
-        	<input type="text" th:field="*{lname}" class="form-control"/><br>
+        	<input type="text" th:field="*{lname}" class="form-control" required/><br>
 		</div>
 		
 		<div>
 		<label>วันเกิด(วว/ดด/ปปปป):</label> 
 			<input type="date" th:field="*{birth_date}" placeholder="Select date" 
-			class="form-control" style="width: 200px; display: inline-block;" /><br>
+			class="form-control" style="width: 200px; display: inline-block;" required /><br>
 		</div>
 
 		<div>
 		<label>เบอร์โทรศัพท์</label> 
 			<input type="tel" th:field="*{tel}" placeholder="0812345678" 
-			class="form-control" /><br>
+			class="form-control" required/><br>
 		</div>
 
 		<div>
 		<label>รหัสผ่าน</label>
-			<input type="password" th:field="*{password}" class="form-control"/>	
+			<input type="password" th:field="*{password}" class="form-control" required/>	
 		</div>
 		<div>
 						

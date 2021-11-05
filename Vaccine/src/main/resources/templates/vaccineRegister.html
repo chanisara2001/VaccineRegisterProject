@@ -37,17 +37,17 @@
 	<form th:action="@{/vaccineRegister}" method="post", th:object="${register}">
 			
 		<label>จังหวัด</label> 
-			<select th:field="*{province.province_id}">
+			<select th:field="*{province.province_id}" required>
     			<option th:each="p : ${provinces}" th:value="${p.province_id}" th:text="${p.name_in_thai}" ></option>
 			</select><br>
 			
 		<label>วัคซีนที่ต้องการ</label> 
-			<select th:field="*{vaccine.vaccine_id}">
+			<select th:field="*{vaccine.vaccine_id}" required>
     			<option th:each="v : ${vaccines}" th:value="${v.vaccine_id}" th:text="${v.name}" ></option>
 			</select><br>
 			
 		<label>จำนวนโดส</label>
-			 <select class="form-select" th:field="*{dose}" style="width: 200px; display: inline-block; ">
+			 <select class="form-select" th:field="*{dose}" style="width: 200px; display: inline-block; " required>
   				<option value="1">1 โดส</option>
   				<option value="2">2 โดส</option>
 			</select><br>
